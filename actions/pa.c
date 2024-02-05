@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.h                                          :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 10:38:51 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/03 10:38:54 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/03 14:52:15 by pclaus            #+#    #+#             */
+/*   Updated: 2024/02/03 14:52:18 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ACTIONS_H
-# define ACTIONS_H
+#include "../includes/actions.h"
 
-#include "../libft/includes/libft.h"
-
-void	sa(int *a_0, int *a_1);
-void	sb(int *b_0, int *b_1);
-void	ss(int *a_0, int *a_1, int *b_0, int *b_1);
-void	pa(int *array_a, int *array_b);
-
-#endif
+void	pa(int *ptr_a, int *ptr_b)
+{
+	ft_printf("%d\n", *ptr_a);
+	ft_printf("%d\n", *ptr_b);
+	ft_printf("%d\n", *++ptr_a);
+	ft_printf("%d\n", *++ptr_b);
+	while (*ptr_a )
+	{
+		ft_printf("%d\n", *++ptr_a);
+	}
+	while (*ptr_b)
+	{
+		ft_printf("%d\n", *++ptr_b);
+	}
+}

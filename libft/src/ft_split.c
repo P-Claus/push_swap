@@ -12,78 +12,72 @@
 
 #include "../includes/libft.h"
 
-static int	number_of_substrings(char const *s, char c)
+static int	number_of_substrings(char *s, char c)
 {
-	int	index;
+	int	in_word;
 	int	count;
 
-	index = 0;
+	in_word = 0;
 	count = 0;
 	while (*s)
 	{
-		if (*s != c && count == 0)
+		if (*s != c && in_word == 0)
 		{
-			count = 1;
-			index++;
+			in_word = 1;
+			count++;
 		}
 		else if (*s == c)
-			count = 0;
+			in_word = 0;
 		s++;
 	}
-	return (index);
+	return (count);
 }
 
-static char	*copy_word(const char *s, int start, int finish)
+static char	*get_word(char *s, char c)
 {
+	static int	cursor = 0;
+	char		*word;
+	int			len;
+	int			index;
+
+	len = 0;
+	index = 0;
+	while (s[cursor] == c)
+		cursor++;
+	while ((s[cursor + len] != c) && s[cursor + len])
+		len++;
+	word = malloc(len * sizeof(char) + 1);
+	if (!word)
+		return (NULL);
+	while ((s[cursor] != c) && s[cursor])
+		word[index++] = s[cursor++];
+	word[index] = '\0';
+	return (word);
+}
+
+char	**ft_split(char *str, char separator)
+{
+	char	**vector_strings;
+	int		number_of_words;
 	int		index;
-	char	*substring;
 
 	index = 0;
-	substring = malloc((finish - start + 1) * sizeof(char));
-	if (!substring)
+	number_of_words = number_of_substrings(str, separator);
+	vector_strings = malloc(sizeof(char *) * (number_of_words + 2));
+	if (!vector_strings)
 		return (NULL);
-	while (start < finish)
-		substring[index++] = s[start++];
-	substring[index] = '\0';
-	return (substring);
-}
-
-static char	**cleanup_strings(char **strings, size_t j)
-{
-	while (j > 0)
+	while (number_of_words-- >= 0)
 	{
-		j--;
-		free(strings[j]);
-	}
-	free(strings);
-	return (NULL);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		index;
-	char	**strings;
-	size_t	i;
-	size_t	j;
-
-	index = -1;
-	i = -1;
-	j = 0;
-	strings = malloc((number_of_substrings(s, c) + 1) * sizeof(char *));
-	if (!s || !strings)
-		return (0);
-	while (++i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		if (index == 0)
 		{
-			strings[j] = copy_word(s, index, i);
-			if (strings[j++] == NULL)
-				return (cleanup_strings(strings, j -1));
-			index = -1;
+			vector_strings[index] = malloc(sizeof(char));
+			if (!vector_strings[index])
+				return (NULL);
+			vector_strings[index++][0] = '\0';
+			continue ;
 		}
+		vector_strings[index++] = get_word(str, separator);
 	}
-	strings[j] = 0;
-	return (strings);
+	vector_strings[index] = NULL;
+	return (vector_strings);
 }
