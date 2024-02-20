@@ -6,11 +6,14 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:06:15 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/20 16:07:37 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/20 17:28:20 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
+
 int main(int argc, char **argv)
 {
-    
+   ft_printf("The argc is: %d\n", argc); 
+   ft_printf("Argv[1] is: %s\n", argv[1]); 
 }
