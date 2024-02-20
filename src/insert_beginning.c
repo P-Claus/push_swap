@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   insert_beginning.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 16:06:15 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/20 21:45:07 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/20 21:29:28 by pclaus            #+#    #+#             */
+/*   Updated: 2024/02/20 21:51:51 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int argc, char **argv)
+void    insert_beginning(Node **head, int data)
 {
-   Node *a;
-   Node *b;
+    Node *new_node = malloc(sizeof(Node));
+    if (!new_node)
+        exit(EXIT_FAILURE);
 
-   a = NULL;
-   b = NULL;
-   if (argc == 1 || ((argc == 2) && !(argv[2][0])))
-   {
-      ft_printf("You need to enter arguments\n");
-      return (1);
-   }
-   else
-   {
-      insert_beginning(&a, 7);
-      ft_printf("argc is: %d\n", argc);
-      ft_printf("argv[1] is: %s\n", argv[1]);
-   }
-   ft_printf("%p\n", a);
-   ft_printf("%p\n", b);
+    new_node->value = data;
+    new_node->prev = NULL;
+    new_node->next = *head;
+    if (*head != NULL)
+    {
+        (*head)->prev = new_node;
+    }
+    *head = new_node;
 }
