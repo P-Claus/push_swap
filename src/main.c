@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:06:15 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/20 21:45:07 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/21 16:14:26 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,15 @@ int main(int argc, char **argv)
    }
    else
    {
-      insert_beginning(&a, 7);
-      ft_printf("argc is: %d\n", argc);
-      ft_printf("argv[1] is: %s\n", argv[1]);
+      //init_list(&a, ft_atoi(argv[1]));
+      insert_beginning(&a, ft_atoi(argv[1]));
+      insert_beginning(&a, ft_atoi(argv[2]));
+      insert_beginning(&a, ft_atoi(argv[3]));
    }
+   ft_printf("Node a has a value of: %d\n", a->value);
+   print_list(a);
+
+   remove_all_nodes(&a);
    ft_printf("%p\n", a);
    ft_printf("%p\n", b);
 }
