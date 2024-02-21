@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 21:29:28 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/21 16:03:52 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/21 20:30:00 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void    insert_beginning(Node **head, int data)
 {
+    static int index;
+
+    if (!index)
+        index = 0;
     if (!head)
     {
         *head = (Node *)malloc(sizeof(Node));
@@ -26,14 +30,11 @@ void    insert_beginning(Node **head, int data)
     }
     Node *new_node = malloc(sizeof(Node));
     if (!new_node)
-        exit(EXIT_FAILURE);
-
+        return;
     new_node->value = data;
+    new_node->current_index = index;
     new_node->prev = NULL;
     new_node->next = *head;
-    if (*head != NULL)
-    {
-        (*head)->prev = new_node;
-    }
     *head = new_node;
+    index++;
 }
