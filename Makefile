@@ -6,7 +6,7 @@ NAME		= push_swap
 
 CC			= cc
 RM			= rm -rf
-CFLAGS		= -Wall -Werror -Wextra $(INCLUDES)
+CFLAGS		= -Wall -Werror -Wextra -g $(INCLUDES)
 
 
 LIBFT_DIR	= ./libft
@@ -20,6 +20,10 @@ SOURCES_DIR	= src
 SOURCES		= $(wildcard $(SOURCES_DIR)/*.c)
 OBJ			= $(addprefix $(OBJ_DIR)/, $(notdir $(SOURCES:.c=.o)))
 OBJ_DIR		= obj
+
+ERROR_DIR	= error
+ERROR_FILES	= $(wildcard $(ERROR_DIR)/*.c)
+ERROR_OBJ	= $(addprefix $(OBJ_DIR)/, $(notdir $(ERROR_FILES:.c=.o)))
 
 INCLUDES	= -I ./includes
 
@@ -46,12 +50,16 @@ all: $(NAME)
 $(LIBFT): 
 	@make -s -C $(LIBFT_DIR) 
 
-$(NAME): $(LIBFT) $(OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJ) $(ERROR_OBJ)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(ERROR_OBJ) $(LIBFT)
 	@echo "$(RESET)$(GREEN)Compiled $(NAME)"
 
 $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
 	@$(MKDIR) $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+
+$(OBJ_DIR)/%.o: $(ERROR_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo -n "$(RESET)$(YELLOW)Compiled $<"
 
