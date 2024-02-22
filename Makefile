@@ -35,6 +35,7 @@ MAGENTA			= \033[0;35m
 CYAN			= \033[0;36m
 RESET			= \033[0m
 MOVEUP			= \033[F
+RESET			= \e[2K\r
 
 #########################################
 ###		 		RULES	      	      ###
@@ -47,17 +48,20 @@ $(LIBFT):
 
 $(NAME): $(LIBFT) $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT)
-	@echo "$(GREEN)Compiled $(NAME)"
+	@echo "$(RESET)$(GREEN)Compiled $(NAME)"
+
 $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
 	@$(MKDIR) $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(YELLOW)Compiled $<"
+	@echo -n "$(RESET)$(YELLOW)Compiled $<"
 
 clean:
-	@make clean -C $(LIBFT_DIR)
+	@make clean -s -C $(LIBFT_DIR)
+	@$(RM) $(OBJ_DIR)
+	@echo "$(GREEN)Removed the object files from push_swap"
 
 fclean:
-	@make fclean -C $(LIBFT_DIR)
+	@make fclean -s -C $(LIBFT_DIR)
 	@$(RM) $(OBJ_DIR)
 	@$(RM) $(NAME)
 	@echo "$(GREEN)Removed $(NAME) and the object files"
