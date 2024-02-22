@@ -4,8 +4,8 @@
 
 NAME		= push_swap
 
-CC		= cc
-RM		= rm -rf
+CC			= cc
+RM			= rm -rf
 CFLAGS		= -Wall -Werror -Wextra $(INCLUDES)
 
 
@@ -43,11 +43,11 @@ MOVEUP			= \033[F
 all: $(NAME)
 
 $(LIBFT): 
-	@make -C $(LIBFT_DIR)
+	@make -s -C $(LIBFT_DIR) 
 
 $(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(sources) $(LIBFT)
-
+	@$(CC) $(CFLAGS) -o $(NAME) $(SOURCES) $(LIBFT)
+	@echo "$(GREEN)Compiled $(NAME)"
 $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
 	@$(MKDIR) $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -58,6 +58,9 @@ clean:
 
 fclean:
 	@make fclean -C $(LIBFT_DIR)
+	@$(RM) $(OBJ_DIR)
+	@$(RM) $(NAME)
+	@echo "$(GREEN)Removed $(NAME) and the object files"
 
 re:
 	@make fclean

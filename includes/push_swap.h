@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 20:09:15 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/21 20:55:25 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/22 10:42:07 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef	struct s_stack_node
 	struct s_stack_node	*prev;
 }						Node;
 
-
+int	main(int argc, char **argv);
 void    insert_beginning(Node **head, int data);
 void	insert_end(Node **head, int data);
 void	init_list(Node **head, int data);
