@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:55 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/22 21:48:53 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/23 16:34:54 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,18 @@ int    error_check_duplicates(int argc, char **argv)
     int array[argc - 1];
     int count;
     int i;
-    int j;
 
     count = 1;
     i = 0;
-    j = 0;
     while (i < argc - 1)
         array[i++] = 0;
     i = 0;
     while (argv[count])
     {
-        while (array[j])
+        while (i < argc - 1)
         {
             if (array[i++] == ft_atoi(argv[count]))
                 return (1);
-            j++;
         }
         i = 0;
         array[count] = ft_atoi(argv[count]);
