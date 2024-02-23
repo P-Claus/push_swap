@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:55 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/23 16:34:54 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/23 17:07:19 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ int    check_for_errors(int argc, char **argv)
         ft_printf("Error\n");
         return (1);
     }
-   /* 
     if (error_check_for_int(argv) == 1)
     {
-        ft_printf("Error");
+        ft_printf("Error\n");
         return (1);
-    }*/
+    }
     return (0);
 }
 
@@ -40,10 +39,8 @@ int    error_check_integer(char **argv)
     count = 1;
     while (argv[count])
     {
-        if (!ft_str_is_numeric(argv[count]))
-        {
+        if (is_valid_int(argv[count]) == 1)
             return (1);
-        }
         count++;
     }
     return (0);
@@ -81,11 +78,12 @@ int    error_check_for_int(char **argv)
 
     count = 0;
     nb = 0;
-    while (argv[count++])
+    while (argv[count])
     {
         nb = ft_atoi_long(argv[count]);
         if (nb > INT_MAX || nb < INT_MIN)
             return (1);
+        count++;
     }
     return (0);
 }

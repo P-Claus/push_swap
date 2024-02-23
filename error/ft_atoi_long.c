@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 19:58:44 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/22 21:23:23 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/23 16:44:18 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atoi_long(const char *str)
 {
 	int	iter;
 	int	sign;
-	int	result;
+	long	result;
 
 	iter = 0;
 	sign = 1;
