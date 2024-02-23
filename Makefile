@@ -27,7 +27,7 @@ ERROR_OBJ	= $(addprefix $(OBJ_DIR)/, $(notdir $(ERROR_FILES:.c=.o)))
 
 ACTIONS_DIR		= actions
 ACTIONS_FILES	= $(wildcard $(ACTIONS_DIR)/*.c)
-ACTIONS_OBJ		= $(addprefix $(ACTIONS_DIR)/, $(notdir $(ACTIONS_FILES:.c=.o)))
+ACTIONS_OBJ		= $(addprefix $(OBJ_DIR)/, $(notdir $(ACTIONS_FILES:.c=.o)))
 
 INCLUDES	= -I ./includes
 
