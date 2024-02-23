@@ -6,27 +6,27 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 20:33:10 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/21 21:15:48 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/23 21:14:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    insert_end(Node **tail, int data)
+void    insert_end(Node **head, int data)
 {
     static int index;
 
     if (!index)
         index = 0;
-    if (!*tail)
+    if (*head == NULL)
     {
-        *tail = (Node *)malloc(sizeof(Node));
-        if (!*tail)
+        *head = (Node *)malloc(sizeof(Node));
+        if (!*head)
             exit(1);
-        (*tail)->value = data;
-        (*tail)->current_index = 0;
-        (*tail)->next = NULL;
-        (*tail)->prev = NULL;
+        (*head)->value = data;
+        (*head)->current_index = 0;
+        (*head)->next = NULL;
+        (*head)->prev = NULL;
     }
     else
     {
@@ -35,11 +35,10 @@ void    insert_end(Node **tail, int data)
             return;
         new_node->value = data;
         new_node->current_index = index;
-        new_node->prev = *tail;
+        new_node->prev = *head;
         new_node->next = NULL;
-        (*tail)->next = new_node;
-        *tail = new_node;
+        (*head)->next = new_node;
+        *head = new_node;
     }
-    
-    index++;
+   index++;
 }

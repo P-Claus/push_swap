@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.h                                          :+:      :+:    :+:   */
+/*   reset_head.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclaus <pclaus@student.s19.be>             +#+  +:+       +#+        */
+/*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/03 10:38:51 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/03 10:38:54 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/23 18:29:36 by pclaus            #+#    #+#             */
+/*   Updated: 2024/02/23 21:08:32 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ACTIONS_H
-# define ACTIONS_H
+#include "../includes/push_swap.h"
 
-#include "../libft/includes/libft.h"
-
-void	sa(int *a_0, int *a_1);
-void	sb(int *b_0, int *b_1);
-void	ss(int *a_0, int *a_1, int *b_0, int *b_1);
-void	pa(int *array_a, int *array_b);
-
-#endif
+void    reset_head(Node **tail)
+{
+    while (*tail != NULL && (*tail)->prev != NULL)
+        *tail = (*tail)->prev;
+}

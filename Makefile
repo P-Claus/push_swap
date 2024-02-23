@@ -25,6 +25,10 @@ ERROR_DIR	= error
 ERROR_FILES	= $(wildcard $(ERROR_DIR)/*.c)
 ERROR_OBJ	= $(addprefix $(OBJ_DIR)/, $(notdir $(ERROR_FILES:.c=.o)))
 
+ACTIONS_DIR		= actions
+ACTIONS_FILES	= $(wildcard $(ACTIONS_DIR)/*.c)
+ACTIONS_OBJ		= $(addprefix $(ACTIONS_DIR)/, $(notdir $(ACTIONS_FILES:.c=.o)))
+
 INCLUDES	= -I ./includes
 
 #########################################
@@ -50,8 +54,8 @@ all: $(NAME)
 $(LIBFT): 
 	@make -s -C $(LIBFT_DIR) 
 
-$(NAME): $(LIBFT) $(OBJ) $(ERROR_OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(ERROR_OBJ) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJ) $(ERROR_OBJ) $(ACTIONS_OBJ)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(ERROR_OBJ) $(ACTIONS_OBJ) $(LIBFT)
 	@echo "$(RESET)$(GREEN)Compiled $(NAME)"
 
 $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
@@ -60,6 +64,10 @@ $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
 	@echo -n "$(RESET)$(YELLOW)Compiled $<"
 
 $(OBJ_DIR)/%.o: $(ERROR_DIR)/%.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+
+$(OBJ_DIR)/%.o: $(ACTIONS_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo -n "$(RESET)$(YELLOW)Compiled $<"
 

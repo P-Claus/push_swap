@@ -3,21 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclaus <pclaus@student.s19.be>             +#+  +:+       +#+        */
+/*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:42:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/03 10:42:33 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/23 18:21:00 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/actions.h"
+#include "../includes/push_swap.h"
 
-void	sa(int *a_0, int *a_1)
+void	sa(Node *tail_a)
 {
 	int temp;
-
-	temp = *a_0;
-	*a_0 = *a_1;
-	*a_1 = temp;
+	
+	Node *head_a = tail_a;
+    while (head_a != NULL && head_a->prev != NULL)
+	{
+		head_a = head_a->prev;
+	}
+	temp = head_a->value;
+	head_a->value = head_a->next->value;
+	head_a->next->value = temp;
 	ft_printf("sa\n");
 }
+
