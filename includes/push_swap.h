@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/23 21:31:20 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/24 09:22:50 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int    error_check_for_int(char **argv);
 /*	ACTIONS	*/
 void	sa(Node *head_a);
 void	sb(Node *head_b);
+void	ss(Node *head_a, Node *head_b);
 
 /*	MISCELLANEOUS FUNCTIONS	*/
 long	ft_atoi_long(const char *str);
