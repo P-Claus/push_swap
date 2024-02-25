@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/24 21:16:09 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/25 22:27:09 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ int main(int argc, char **argv)
       }
    }
    tail_to_head(&a);
+   rr(&a, &b);
    print_list(a, b, argc);
+   print_list_with_info(a, b, argc);
+   rr(&a, &b);
+   print_list(a, b, argc);
+   print_list_with_info(a, b, argc);
    remove_all_nodes(&a);
    remove_all_nodes(&b);
 }
