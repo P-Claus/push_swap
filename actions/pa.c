@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:26:24 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/24 14:27:01 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/26 22:07:14 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,22 @@
 
 void    pa(Node **head_a, Node **head_b)
 {
+    Node    *top_b;
+    Node    *new_node;
+
+    new_node = malloc(sizeof(Node));
+    if (!new_node)
+        return;
     if (*head_b == NULL)
         return;
-    insert_beginning(head_a, (*head_b)->value);
-    remove_node(head_b);
+    top_b = *head_b;
+    *head_b = (*head_b)->next;
+    (*head_b)->prev = NULL;
+    new_node->prev = NULL;
+    new_node->next = *head_a;
+    new_node->value = top_b->value;
+    (*head_a)->prev = new_node;
+    *head_a = new_node;
+    free(top_b);
     ft_printf("pa\n");
 }
