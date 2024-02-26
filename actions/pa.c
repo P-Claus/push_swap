@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:26:24 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/26 22:07:14 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/26 22:09:20 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void    pa(Node **head_a, Node **head_b)
     Node    *top_b;
     Node    *new_node;
 
+    if (*head_b == NULL)
+        return;
     new_node = malloc(sizeof(Node));
     if (!new_node)
-        return;
-    if (*head_b == NULL)
         return;
     top_b = *head_b;
     *head_b = (*head_b)->next;
