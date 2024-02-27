@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:55 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/23 17:07:19 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/27 17:23:02 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int    error_check_integer(char **argv)
     int count;
 
     count = 1;
-    while (argv[count])
+    while (argv[count] != NULL)
     {
         if (is_valid_int(argv[count]) == 1)
             return (1);
@@ -48,12 +48,23 @@ int    error_check_integer(char **argv)
 
 int    error_check_duplicates(int argc, char **argv)
 {
-    int array[argc - 1];
     int count;
     int i;
 
+    (void)argc;
     count = 1;
-    i = 0;
+    i = 1;
+    while (argv[count])
+    {
+        while (argv[i])
+        {
+            if (argv[i] == argv[count] && i != count)
+                return (1);
+            i++;
+        }
+        count++;
+    }
+    /*
     while (i < argc - 1)
         array[i++] = 0;
     i = 0;
@@ -61,13 +72,14 @@ int    error_check_duplicates(int argc, char **argv)
     {
         while (i < argc - 1)
         {
-            if (array[i++] == ft_atoi(argv[count]))
+            if (array[i++] == argv[count])
                 return (1);
         }
         i = 0;
-        array[count] = ft_atoi(argv[count]);
+        array[count] = argv[count];
         count++;
     }
+    */
     return (0);
 }
 
@@ -78,7 +90,7 @@ int    error_check_for_int(char **argv)
 
     count = 0;
     nb = 0;
-    while (argv[count])
+    while (argv[count] != NULL)
     {
         nb = ft_atoi_long(argv[count]);
         if (nb > INT_MAX || nb < INT_MIN)

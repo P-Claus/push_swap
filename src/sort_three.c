@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert_end.c                                       :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 20:33:10 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/27 16:18:09 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/27 16:44:18 by pclaus            #+#    #+#             */
+/*   Updated: 2024/02/27 16:59:51 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    insert_end(Node **head, int data)
+void    sort_three(Node **head_a)
 {
-    Node *new_node = malloc(sizeof(Node));
-    if (!new_node)
-        return;
-    new_node->value = data;
-    new_node->prev = *head;
-    new_node->next = NULL;
-    if (new_node->prev != NULL && new_node->prev->next == NULL)
-        new_node->prev->next = new_node;
-    if (!*head)
-        *head = new_node;
-    else
-    {
-        (*head)->next = new_node;
-        *head = new_node;
-    }
+    if ((*head_a)->value > (*head_a)->next->value)
+        sa(*head_a);
+    if ((*head_a)->value > (*head_a)->next->next->value)
+        rra(head_a);
 }
