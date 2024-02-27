@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/26 22:18:18 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/27 14:50:58 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
    tail_to_head(&a);
    print_list(a, b, argc);
    print_list_with_info(a, b, argc);
-   pb(&a, &b);
+   rrb(&b);
    print_list(a, b, argc);
    print_list_with_info(a, b, argc);
    remove_all_nodes(&a);

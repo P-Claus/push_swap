@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/25 22:27:30 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/27 14:50:26 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	pb(Node **head_a, Node **head_b);
 void	ra(Node **head);
 void	rb(Node **head);
 void	rr(Node **head_a, Node **head_b);
+void    rra(Node **head);
+void    rrb(Node **head);
 
 /*	MISCELLANEOUS FUNCTIONS	*/
 long	ft_atoi_long(const char *str);
