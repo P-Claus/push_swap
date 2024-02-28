@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:44:18 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/28 13:18:56 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/28 20:50:41 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 void    sort_three(Node **head)
 {
-    if ((*head)->value < (*head)->next->value && (*head)->next->next->value > (*head)->next->value)
+    if ((*head)->value < (*head)->next->value && (*head)->next->value < (*head)->next->next->value)
+        return;
+    if ((*head)->value < (*head)->next->value && (*head)->next->next->value < (*head)->next->value && (*head)->value > (*head)->next->next->value)
+        rra(head);
+    if ((*head)->value < (*head)->next->value && (*head)->next->value > (*head)->next->next->value && (*head)->next->next->value > (*head)->value)
         sa(*head);
-    if ((*head)->value > (*head)->next->value && (*head)->next->next->value > (*head)->next->value)
+    if ((*head)->value > (*head)->next->value && (*head)->next->value < (*head)->next->next->value && (*head)->next->next->value < (*head)->value)
+        ra(head);
+    if ((*head)->value > (*head)->next->value && (*head)->next->value > (*head)->next->next->value && (*head)->next->next->value < (*head)->value)
+        ra(head);
+    if ((*head)->value > (*head)->next->value && (*head)->next->value < (*head)->next->next->value && (*head)->next->next->value > (*head)->value)
         sa(*head);
 }

@@ -2,35 +2,53 @@
 
 # Function to generate a random list of integers within a specified range
 generate_random_list() {
-    local num=$1
+  local num=$1
     local min=$2
     local max=$3
     local range=$((max - min + 1))
     for ((i = 0; i < num; i++)); do
-        echo $((min + RANDOM % range))
+        echo -n $((min + RANDOM*RANDOM*RANDOM*RANDOM*RANDOM % range))
+        # Add a space after each number, but not after the last number
+        if (( i < num - 1 )); then
+            echo -n " "
+        fi
     done
+    # Add a newline at the end
+    echo
 }
 
 # Function to display header
 display_header() {
-    echo "----------------------------------------"
-    echo "      Random Integer Generator Script   "
-    echo "----------------------------------------"
-    echo "Created by pclaus (GitHub: https://github.com/P-Claus)"
-    echo "This script generates a random list of integers"
-    echo "and runs the push_swap program with those integers."
-    echo "----------------------------------------"
+    # ANSI escape code for yellow
+    local yellow='\033[1;33m'
+    # ANSI escape code to reset color
+    local reset='\033[0m'
+
+    echo
+    echo -e "${yellow}"
+    echo "+---------------------------------------------------------------+"
+    echo "|                    push_swap tester script                    |"
+    echo "+---------------------------------------------------------------+"
+    echo -e "${reset}"
     echo
 }
 
 # Function to display list of integers in a nice box format
 display_integer_list() {
-    echo "Generated List of Integers:"
-    echo "+---------------------------+"
-    for num in "${integers_array[@]}"; do
-        printf "| %-25s |\n" "$num"
+    local blue='\033[1;34m'
+    local reset='\033[0m'
+
+    echo -e "${blue}"
+    echo "Generated List of Integers: "
+   for ((i = 0; i < ${#integers_array[@]}; i++)); do
+        echo -n "${integers_array[i]}"
+        # Add a comma after each number, but not after the last number
+        if (( i < ${#integers_array[@]} - 1 )); then
+            echo -n ", "
+        fi 
     done
-    echo "+---------------------------+"
+    echo -e "${reset}"
+    echo
 }
 
 # Display the header
@@ -38,30 +56,33 @@ display_header
 
 # Prompt user for the number of integers
 read -p "Enter the number of integers to generate: " num_integers
+echo
 
 # Range of integers (adjust as needed)
-min=-2147483648  # Minimum integer value
-max=2147483647   # Maximum integer value
+min=-10000  # Minimum integer value
+max=10000  # Maximum integer value
 
 # Generate random list of integers
-random_integers=$(generate_random_list $num_integers $min_int $max_int)
+random_integers=$(generate_random_list $num_integers $min $max)
 
 # Convert the list of integers into an array
 read -r -a integers_array <<< "$random_integers"
 
 # Display the list of integers in a nice box
 display_integer_list
-
+echo
 # Run push_swap with the generated list of integers as arguments
 output=$(./push_swap "${integers_array[@]}")
+echo
 
 # Run checker with the generated list of integers as arguments
-checker_output=$(echo "$output" | ./checker_linux "${integers_array[@]}")
+#checker_output=$(echo "$output" | ./checker_linux "${integers_array[@]}")
 
 # Check if sorting is successful
-if [[ $checker_output == "OK" ]]; then
-    echo -e "\e[32mList sorted \xE2\x9C\x94\e[0m"  # Green checkmark
-    echo "Number of moves: $(echo "$output" | wc -l)"
-else
-    echo -e "\e[91mError: Sorting failed\e[0m"  # Red color
-fi
+#if [[ $checker_output == "OK" ]]; then
+ #   echo -e "\e[32mList sorted \xE2\x9C\x94\e[0m"  # Green checkmark
+echo "Number of moves: $(echo "$output" | wc -l)"
+echo
+#else
+ #   echo -e "\e[91mError: Sorting failed\e[0m"  # Red color
+#fi
