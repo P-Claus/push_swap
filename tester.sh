@@ -76,13 +76,13 @@ output=$(./push_swap "${integers_array[@]}")
 echo
 
 # Run checker with the generated list of integers as arguments
-#checker_output=$(echo "$output" | ./checker_linux "${integers_array[@]}")
+checker_output=$(echo "$output" | ./checker_Mac "${integers_array[@]}")
 
 # Check if sorting is successful
-#if [[ $checker_output == "OK" ]]; then
- #   echo -e "\e[32mList sorted \xE2\x9C\x94\e[0m"  # Green checkmark
-echo "Number of moves: $(echo "$output" | wc -l)"
+if [[ $checker_output == "OK" ]]; then
+   	echo -e "\033[0;32mList sorted \xE2\x9C\x94\033[0m"  # Green checkmark
+	echo "Number of moves: $(echo "$output" | wc -l)"
 echo
-#else
- #   echo -e "\e[91mError: Sorting failed\e[0m"  # Red color
-#fi
+else
+    echo -e "\033[0;31mError: Sorting failed\033[0m"  # Red color
+fi
