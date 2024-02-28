@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/27 16:44:18 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/28 13:18:56 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/27 21:45:01 by pclaus            #+#    #+#             */
+/*   Updated: 2024/02/28 13:14:23 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "../includes/push_swap.h"
 
-void    sort_three(Node **head)
+void    sort_five(Node **head_a, Node **head_b)
 {
-    if ((*head)->value < (*head)->next->value && (*head)->next->next->value > (*head)->next->value)
-        sa(*head);
-    if ((*head)->value > (*head)->next->value && (*head)->next->next->value > (*head)->next->value)
-        sa(*head);
+    
 }
+
+*/

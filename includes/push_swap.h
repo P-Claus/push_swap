@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/27 17:00:00 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/28 13:15:44 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    rrb(Node **head);
 void    rrr(Node **head_a, Node **head_b);
 
 /*	ALGORITHM FUNCTIONS	*/
-void	sort_three(Node **head_a);
+void	sort_three(Node **head);
 
 
 
