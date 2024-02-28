@@ -82,7 +82,8 @@ checker_output=$(echo "$output" | ./checker_Mac "${integers_array[@]}")
 if [[ $checker_output == "OK" ]]; then
    	echo -e "\033[0;32mList sorted \xE2\x9C\x94\033[0m"  # Green checkmark
 	echo "Number of moves: $(echo "$output" | wc -l)"
-echo
+	echo
 else
     echo -e "\033[0;31mError: Sorting failed\033[0m"  # Red color
+	echo
 fi
