@@ -75,7 +75,13 @@ echo
 output=$(./push_swap "${integers_array[@]}")
 echo
 
-echo $output
+echo "$output"
+
+line_count=$(echo "$output" | wc -l)
+line_count=$((line_count - 2))
+
+echo
+echo "Number of moves: $line_count"
 echo
 
 # Run checker with the generated list of integers as arguments
