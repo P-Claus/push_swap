@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/28 13:15:44 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/01 18:15:00 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void    insert_beginning(Node **head, int data);
 void	insert_end(Node **head, int data);
 void    insert_multiple_end(char **argv, Node **head);
 void	init_list(Node **head, int data);
-void	print_list(Node *head_a, Node *head_b, int argc);
+void	print_list(Node *head_a, Node *head_b);
 void    print_list_with_info(Node *head_a, Node *head_b, int argc);
 void	remove_all_nodes(Node **head);
 void	remove_node(Node **head);
@@ -57,6 +57,7 @@ void    rrr(Node **head_a, Node **head_b);
 
 /*	ALGORITHM FUNCTIONS	*/
 void	sort_three(Node **head);
+void	sort_five(Node **head_a, Node **head_b);
 
 
 
@@ -65,5 +66,6 @@ long	ft_atoi_long(const char *str);
 int		is_valid_int(char *str);
 void	tail_to_head(Node **tail);
 void	head_to_tail(Node **head);
+int    check_destination(Node **head);
 
 #endif
