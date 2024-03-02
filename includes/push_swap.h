@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/01 18:15:00 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 19:19:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void    rrr(Node **head_a, Node **head_b);
 /*	ALGORITHM FUNCTIONS	*/
 void	sort_three(Node **head);
 void	sort_five(Node **head_a, Node **head_b);
+void    sort_five_final_sort(Node **head);
 
 
 
@@ -66,6 +67,7 @@ long	ft_atoi_long(const char *str);
 int		is_valid_int(char *str);
 void	tail_to_head(Node **tail);
 void	head_to_tail(Node **head);
-int    check_destination(Node **head);
+int    check_destination(Node **head, int new_value);
+int	find_lowest_int(Node **head_a);
 
 #endif

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_five_final_sort.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/02 19:27:14 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/02 19:17:49 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/02 19:46:42 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int argc, char **argv)
+void    sort_five_final_sort(Node **head)
 {
-   Node *a;
-   Node *b;
+    int lowest_int_position;
 
-   a = NULL;
-   b = NULL;
-   if (argc == 1)
-      return (1);
-   if (check_for_errors(argc, argv))
-      return (1);
-   else
-      insert_multiple_end(argv, &a);
-   if (argc == 4)
-      sort_three(&a);
-   if (argc == 6)
-      sort_five(&a, &b);
-   print_list(a, b);
-   //print_list_with_info(a, b, argc);
-   remove_all_nodes(&a);
-   remove_all_nodes(&b);
+    lowest_int_position = find_lowest_int(head);
+    if (lowest_int_position == 1)
+    {
+        ra(head);
+    }
+    if (lowest_int_position == 2)
+    {
+        ra(head);
+        ra(head);
+    }
+    if (lowest_int_position == 3)
+    {
+        rra(head);
+        rra(head);
+    }
+    if (lowest_int_position == 4)
+        rra(head);
 }

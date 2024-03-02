@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:45:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/02 14:58:16 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 19:34:09 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void    sort_five(Node **head_a, Node **head_b)
     else
         pa(head_a, head_b);
     print_list(*head_a, *head_b);
-    destination = check_destination(head_a);
+    destination = check_destination(head_a, (*head_a)->value);
     ft_printf("The destination is: %d\n", destination);
     if (destination == 1)
         sa(*head_a);
@@ -41,8 +41,10 @@ void    sort_five(Node **head_a, Node **head_b)
     
     pa(head_a, head_b);
     
-    destination = check_destination(head_a);
+    print_list(*head_a, *head_b);
+    destination = check_destination(head_a, (*head_a)->value);
     ft_printf("The destination is: %d\n", destination);
+    
     if (destination == 1)
         sa(*head_a);
     if (destination == 2)
@@ -58,12 +60,9 @@ void    sort_five(Node **head_a, Node **head_b)
         rra(head_a);
         sa(*head_a);
     }
-    if (destination == 4)
-    {
-        rra(head_a);
-        sa(*head_a);
-    }
-
+    print_list(*head_a, *head_b);
+    ft_printf("The lowest int is at position: %d\n", find_lowest_int(head_a));
+    sort_five_final_sort(head_a);
 
 
 }
