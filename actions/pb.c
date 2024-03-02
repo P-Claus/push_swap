@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:26:24 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/29 18:04:07 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 14:28:50 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 void    pb(Node **head_a, Node **head_b)
 {
-    Node    *top_a;
-    Node    *new_node;
-    
+    Node *top_a;
+
     if (*head_a == NULL)
         return;
-    new_node = malloc(sizeof(Node));
-    if (!new_node)
-        return;
-    top_a = *head_a;
-    *head_a = (*head_a)->next;
-    (*head_a)->prev = NULL;
-    new_node->prev = NULL;
-    new_node->next = *head_b;
-    new_node->value = top_a->value;
-    if (*head_b)
-        (*head_b)->prev = new_node;
-    *head_b = new_node;
-    free(top_a);
+    if ((*head_a)->prev == NULL && (*head_a)->next == NULL)
+    {
+        (*head_b)->prev = *head_b;
+        (*head_a)->next = *head_b;
+        *head_a = NULL;
+    }
+    else
+    {
+        top_a = *head_a;
+        *head_a = (*head_a)->next;
+        top_a->next = *head_b;
+        top_a->prev = NULL;
+        if (*head_b)
+            (*head_b)->prev = top_a;
+        *head_b = top_a;
+    }
     ft_printf("pb\n");
 }

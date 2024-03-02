@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:35:45 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/01 18:38:09 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 14:12:38 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int    check_destination(Node **head)
             break;
     }
     *head = old_head;
-    tail_to_head(head);
     return (count);
 }

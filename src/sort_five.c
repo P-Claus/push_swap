@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:45:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/01 18:39:00 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 14:58:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,31 +38,33 @@ void    sort_five(Node **head_a, Node **head_b)
         ra(head_a);
         sa(*head_a);
     }
+    
+    pa(head_a, head_b);
+    
+    destination = check_destination(head_a);
+    ft_printf("The destination is: %d\n", destination);
+    if (destination == 1)
+        sa(*head_a);
+    if (destination == 2)
+    {
+        sa(*head_a);
+        ra(head_a);
+        sa(*head_a);
+    }
     if (destination == 3)
     {
         rra(head_a);
         sa(*head_a);
+        rra(head_a);
+        sa(*head_a);
     }
-    destination = check_destination(head_a);
-    ft_printf("The destination is: %d\n", destination);
-    /*
-    while ((*head_a)->value > (*head_a)->next->value)
+    if (destination == 4)
     {
-        if ((*head_a)->value > (*head_a)->next->value && (*head_a)->value < (*head_a)->next->next->value)
-            sa(*head_a);
-        if ((*head_a)->value > (*head_a)->next->next->next->value)
-            ra(head_a);
-        if ((*head_a)->value > (*head_a)->next->next->value && (*head_a)->value < (*head_a)->next->next->next->value)
-        {
-            rra(head_a);
-            sa(*head_a);
-            ra(head_a);
-            ra(head_a);
-        }
+        rra(head_a);
+        sa(*head_a);
     }
-    
-    while ((*head_b)->value > (*head_a)->value)
-        ra(head_a);*/
-    //pa(head_a, head_b);
+
+
+
 }
 
