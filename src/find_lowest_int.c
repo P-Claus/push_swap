@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 19:04:16 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/03 11:47:42 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/04 22:32:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int    find_lowest_int(Node **head_a)
             lowest = (*head_a)->value;
         *head_a = (*head_a)->next;
     }
-    //ft_printf("The lowest value is: %d\n", lowest);
+    ////ft_printf("The lowest value is: %d\n", lowest);
     *head_a = old_head;
     while ((*head_a))
     {
