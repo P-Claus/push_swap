@@ -6,14 +6,16 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 21:50:56 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/04 22:44:21 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/02/25 21:58:47 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    print_list_with_info(Node *head_a, Node *head_b)
+void    print_list_with_info(Node *head_a, Node *head_b, int argc)
 {
+    (void)argc;
+    
     Node *current_a = head_a;
     Node *current_b = head_b;
     ft_printf("a:   ");

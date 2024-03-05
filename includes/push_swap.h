@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/04 22:34:51 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/02 19:19:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	insert_end(Node **head, int data);
 void    insert_multiple_end(char **argv, Node **head);
 void	init_list(Node **head, int data);
 void	print_list(Node *head_a, Node *head_b);
-void    print_list_with_info(Node *head_a, Node *head_b);
+void    print_list_with_info(Node *head_a, Node *head_b, int argc);
 void	remove_all_nodes(Node **head);
 void	remove_node(Node **head);
 
