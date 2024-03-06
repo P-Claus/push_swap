@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:15:25 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/27 14:40:02 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/05 21:47:06 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void    rra(Node **head)
     Node    *old_tail;
     Node    *current;
 
-    head_to_tail(head);
+    while ((*head)->next)
+        *head = (*head)->next;
     old_tail = *head;
     *head = (*head)->prev;
     current = *head;
