@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:35:45 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/05 21:26:57 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/06 22:22:42 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,26 @@ int    check_destination(Node **head, int new_value)
 {
     int  count;
     Node    *old_head;
+    int lowest_int;
 
     count = 0;
     old_head = *head;
-    while ((*head)->next && new_value < (*head)->value)
+    lowest_int = return_lowest_int(head);
+    //ft_printf("The lowest int is: %d\n", lowest_int);
+    while ((*head))
     {
-        count++;
-        if ((*head)->next && new_value > (*head)->next->value)
+        if (new_value > (*head)->value)
+            count++;
+        else if (new_value < (*head)->value && new_value < lowest_int && (*head)->value != lowest_int)
+            count++;
+        if ((*head)->value == lowest_int && new_value < (*head)->value)
             break;
-        *head = (*head)->next;
-    }
-    *head = old_head;
-    while ((*head)->next && new_value > (*head)->value)
-    {
-        count++;
-        if ((*head)->next && new_value < (*head)->next->value)
+        if ((*head)->prev && lowest_int == (*head)->value && new_value > lowest_int && new_value > (*head)->prev->value)
             break;
-        *head = (*head)->next;
+        if ((*head)->next)
+            *head = (*head)->next;
+        else
+            break;
     }
     *head = old_head;
     return (count);

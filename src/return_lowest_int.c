@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   return_lowest_int.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/06 22:31:19 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/06 21:18:29 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/06 21:21:28 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int main(int argc, char **argv)
+int    return_lowest_int(Node **head_a)
 {
-   Node *a;
-   Node *b;
+    int lowest;
+    Node    *old_head;
 
-   a = NULL;
-   b = NULL;
-   if (argc == 1)
-      return (1);
-   if (check_for_errors(argc, argv))
-      return (1);
-   else
-      insert_multiple_end(argv, &a);
-   if (argc == 4)
-      sort_three(&a);
-   if (argc == 6)
-      sort_five(&a, &b);
-   print_list(a, b);
-   //print_list_with_info(a, b, argc);
-   remove_all_nodes(&a);
-   remove_all_nodes(&b);
+    lowest = INT_MAX;
+    old_head = *head_a;
+    while (*head_a)
+    {
+        if ((*head_a)->value < lowest)
+            lowest = (*head_a)->value;
+        *head_a = (*head_a)->next;
+    }
+    *head_a = old_head;
+    return (lowest);
 }

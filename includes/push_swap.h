@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/05 21:37:15 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/06 21:21:17 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ void	tail_to_head(Node **tail);
 void	head_to_tail(Node **head);
 int    check_destination(Node **head, int new_value);
 int	find_lowest_int(Node **head_a);
+int    return_lowest_int(Node **head_a);
 
 #endif
