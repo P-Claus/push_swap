@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:42:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/23 21:43:49 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/07 18:02:46 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	sa(Node *head_a)
 {
-	int temp;
-	
+	int	temp;
+
 	if (head_a == NULL)
-		return;
+		return ;
 	temp = head_a->value;
 	head_a->value = head_a->next->value;
 	head_a->next->value = temp;
 	ft_printf("sa\n");
 }
-

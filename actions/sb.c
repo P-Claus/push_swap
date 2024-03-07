@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:25:12 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/23 21:42:53 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/07 18:00:27 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	sb(Node *head_b)
 {
-	int temp;
+	int	temp;
 
 	if (head_b == NULL)
-		return;
+		return ;
 	temp = head_b->value;
 	head_b->value = head_b->next->value;
 	head_b->next->value = temp;
 	ft_printf("sb\n");
 }
-
