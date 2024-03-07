@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 21:45:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/06 22:28:41 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/07 16:51:29 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void    sort_five(Node **head_a, Node **head_b)
     }
     else if (destination == 3)
     {
+        rra(head_a);
         pa(head_a, head_b);
     }
     else if (destination == 0 || destination == 4)
