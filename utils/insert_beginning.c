@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_list.c                                       :+:      :+:    :+:   */
+/*   insert_beginning.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 21:16:02 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 17:55:11 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/20 21:29:28 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/08 20:51:12 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	print_list(t_node *head_a, t_node *head_b)
+void	insert_beginning(t_node **head, int data)
 {
-	t_node *current_a = head_a;
-	t_node *current_b = head_b;
-	ft_printf("a:   ");
-	while ((current_a != NULL))
+	if (*head == NULL)
 	{
-		ft_printf("%d   ", current_a->value);
-		current_a = current_a->next;
+		*head = (t_node *)malloc(sizeof(t_node));
+		if (!head)
+			return ;
+		(*head)->value = data;
+		(*head)->next = NULL;
+		(*head)->prev = NULL;
 	}
-	ft_printf("\n");
-	ft_printf("b:   ");
-	while ((current_b != NULL))
+	else
 	{
-		ft_printf("%d   ", current_b->value);
-		current_b = current_b->next;
+		t_node	*new_node = malloc(sizeof(t_node));
+		if (!new_node)
+			return ;
+		new_node->value = data;
+		new_node->prev = NULL;
+		new_node->next = *head;
+		(*head)->prev = new_node;
+		*head = new_node;
 	}
-	ft_printf("\n");
 }

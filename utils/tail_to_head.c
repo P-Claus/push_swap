@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_list.c                                        :+:      :+:    :+:   */
+/*   tail_to_head.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 21:17:40 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 17:51:34 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/24 17:32:22 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/08 20:36:53 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	init_list(t_node **head, int data)
+void	tail_to_head(t_node **tail)
 {
-	*head = (t_node *)malloc(sizeof(t_node));
-	if (!*head)
-		exit(1);
-	(*head)->value = data;
-	(*head)->current_index = 0;
-	(*head)->next = NULL;
-	(*head)->prev = NULL;
+	while (*tail != NULL && (*tail)->prev != NULL)
+		*tail = (*tail)->prev;
 }

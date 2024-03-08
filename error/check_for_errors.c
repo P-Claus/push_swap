@@ -6,13 +6,13 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:55 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 18:14:57 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:50:04 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_for_errors(int argc, char **argv)
+int	check_for_errors(char **argv)
 {
 	if (error_check_duplicates(argv) == 1)
 	{

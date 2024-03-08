@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 21:50:56 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 17:54:35 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:42:36 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	print_list_with_info(t_node *head_a, t_node *head_b)
 {
-	t_node *current_a = head_a;
-	t_node *current_b = head_b;
+	t_node	*current_a;
+	t_node	*current_b;
+	
+	current_a = head_a;
+	current_b = head_b;
 	ft_printf("a:   ");
 	while ((current_a != NULL) && (current_a->value != 0))
 	{

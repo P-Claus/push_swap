@@ -6,13 +6,13 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 21:25:12 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 18:00:27 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:55:07 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sb(Node *head_b)
+void	sb(t_node *head_b)
 {
 	int	temp;
 

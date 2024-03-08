@@ -6,13 +6,13 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:13:45 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 18:00:40 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:55:27 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ss(Node *head_a, Node *head_b)
+void	ss(t_node *head_a, t_node *head_b)
 {
 	int	temp_a;
 	int	temp_b;

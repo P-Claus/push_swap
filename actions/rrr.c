@@ -6,16 +6,16 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:27:23 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 18:04:08 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:54:49 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rrr(Node **head_a, Node **head_b)
+void	rrr(t_node **head_a, t_node **head_b)
 {
-	Node	*old_tail;
-	Node	*current;
+	t_node	*old_tail;
+	t_node	*current;
 
 	head_to_tail(head_a);
 	old_tail = *head_a;

@@ -6,16 +6,16 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 22:01:47 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 18:03:02 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:52:55 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rb(Node **head)
+void	rb(t_node **head)
 {
-	Node	*old_head;
-	Node	*current;
+	t_node	*old_head;
+	t_node	*current;
 
 	old_head = *head;
 	*head = (*head)->next;

@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 19:57:09 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:50:09 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void					remove_all_nodes(t_node **head);
 void					remove_node(t_node **head);
 
 /*	ERROR CHECKING	*/
-int						check_for_errors(int argc, char **argv);
+int						check_for_errors(char **argv);
 int						error_check_integer(char **argv);
 int						error_check_duplicates(char **argv);
 int						error_check_for_int(char **argv);

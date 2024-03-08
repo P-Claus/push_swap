@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert_end.c                                       :+:      :+:    :+:   */
+/*   init_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 20:33:10 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 17:52:55 by pclaus           ###   ########.fr       */
+/*   Created: 2024/02/20 21:17:40 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/08 20:50:56 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	insert_end(t_node **head, int data)
+void	init_list(t_node **head, int data)
 {
-	t_node *new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return ;
-	new_node->value = data;
-	new_node->prev = *head;
-	new_node->next = NULL;
-	if (new_node->prev != NULL && new_node->prev->next == NULL)
-		new_node->prev->next = new_node;
+	*head = (t_node *)malloc(sizeof(t_node));
 	if (!*head)
-		*head = new_node;
-	else
-	{
-		(*head)->next = new_node;
-		*head = new_node;
-	}
+		return ;
+	(*head)->value = data;
+	(*head)->current_index = 0;
+	(*head)->next = NULL;
+	(*head)->prev = NULL;
 }

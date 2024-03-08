@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 19:17:49 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 17:57:22 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 20:35:14 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_five_final_sort(t_node **head)
 {
-	int lowest_int_position;
+	int	lowest_int_position;
 
 	lowest_int_position = find_lowest_int(head);
 	if (lowest_int_position == 1)
