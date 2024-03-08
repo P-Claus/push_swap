@@ -6,15 +6,14 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 17:32:22 by pclaus            #+#    #+#             */
-/*   Updated: 2024/02/24 20:18:31 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 17:51:05 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    head_to_tail(Node **head)
+void	head_to_tail(t_node **head)
 {
-    while (*head != NULL && (*head)->next != NULL)
-        *head = (*head)->next;
-
+	while (*head != NULL && (*head)->next != NULL)
+		*head = (*head)->next;
 }

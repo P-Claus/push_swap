@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/07 16:53:37 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 17:54:04 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main(int argc, char **argv)
 {
-   Node *a;
-   Node *b;
+   t_node *a;
+   t_node *b;
 
    a = NULL;
    b = NULL;

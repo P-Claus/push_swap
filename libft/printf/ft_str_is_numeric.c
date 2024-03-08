@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pclaus <pclaus@student.s19.be>             +#+  +:+       +#+        */
+/*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 15:59:18 by pclaus            #+#    #+#             */
-/*   Updated: 2024/01/28 15:59:20 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/07 20:23:53 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_str_is_numeric(char *str)
 		if ((str[count] >= '0') && (str[count] <= '9'))
 			count++;
 		else
-		 return (0);
+			return (0);
 	}
 	return (1);
 }
