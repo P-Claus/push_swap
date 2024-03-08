@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 20:50:09 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/08 21:10:38 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,12 @@ void					rrr(t_node **head_a, t_node **head_b);
 void					sort_three(t_node **head);
 void					sort_five(t_node **head_a, t_node **head_b);
 void					sort_five_final_sort(t_node **head);
+void					sort_five_fourth_int(t_node **head_a, t_node **head_b,
+							int destination);
+void					sort_five_fifth_int(t_node **head_a, t_node **head_b,
+							int destination);
 
-/*	MISCELLANEOUS FUNCTIONS	*/
+/*	UTILS	*/
 void					tail_to_head(t_node **tail);
 void					head_to_tail(t_node **head);
 int						is_valid_int(char *str);
