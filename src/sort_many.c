@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert_end.c                                       :+:      :+:    :+:   */
+/*   sort_many.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 20:33:10 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/09 17:48:54 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/09 16:52:57 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/09 18:00:04 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	insert_end(t_node **head, int data)
+void	sort_many(t_node **head_a, t_node **head_b)
 {
-	t_node	*new_node;
-
-	new_node = malloc(sizeof(t_node));
-	if (!new_node)
-		return ;
-	new_node->value = data;
-	new_node->prev = *head;
-	new_node->next = NULL;
-	new_node->destination = 0;
-	if (new_node->prev != NULL && new_node->prev->next == NULL)
-		new_node->prev->next = new_node;
-	if (!*head)
-		*head = new_node;
-	else
-	{
-		(*head)->next = new_node;
-		*head = new_node;
-	}
+	pb(head_a, head_b);
+	pb(head_a, head_b);
+	pb(head_a, head_b);
+	sort_three(head_b);
+	count_steps_to_be_in_position(head_a, head_b);
 }

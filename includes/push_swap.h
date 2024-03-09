@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 21:10:38 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/09 17:45:44 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 # include "../libft/includes/libft.h"
 # include <limits.h>
 # include <stdarg.h>
+# include <stdbool.h>
 
 typedef struct s_stack_node
 {
 	int					value;
-	int					current_index;
+	int				destination;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }						t_node;
@@ -62,6 +63,8 @@ void					sort_five_fourth_int(t_node **head_a, t_node **head_b,
 							int destination);
 void					sort_five_fifth_int(t_node **head_a, t_node **head_b,
 							int destination);
+void					sort_many(t_node **head_a, t_node **head_b);
+void					sort_many_initial_sort_b(t_node **head);
 
 /*	UTILS	*/
 void					tail_to_head(t_node **tail);
@@ -71,5 +74,7 @@ int						check_destination(t_node **head, int new_value);
 int						find_lowest_int(t_node **head_a);
 int						return_lowest_int(t_node **head_a);
 long					ft_atoi_long(const char *str);
+void					count_steps_to_be_in_position(t_node **head_a,
+							t_node **head_b);
 
 #endif
