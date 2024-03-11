@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/09 17:00:04 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/11 21:58:31 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 		sort_five(&a, &b);
 	if (argc == 11)
 		sort_many(&a, &b);
+	tail_to_head(&a);
 	print_list(a, b);
 	// print_list_with_info(a, b, argc);
 	remove_all_nodes(&a);
