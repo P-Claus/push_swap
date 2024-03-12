@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 20:17:00 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/12 18:16:12 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/12 18:31:04 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	update_median(t_node **head, int count)
 		ft_printf("The above_median of head_b is: %d\n", (*head)->above_median);	
 		if ((*head)->next)
 			*head = (*head)->next;
-		else
-			break ;
+		// else
+		// break ;
 	}
 	tail_to_head(head);
 	

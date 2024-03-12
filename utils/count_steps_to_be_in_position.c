@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:07:52 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/12 18:27:24 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/12 18:32:11 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,6 @@ void	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 			else
 				break ;
 	}
+	ft_printf("value 1 is: %d, value 2 is: %d, value 3 is: %d\n",
+		(*head_b)->value, (*head_b)->next->value, (*head_b)->next->next->value);
 }
