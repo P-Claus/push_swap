@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 22:01:47 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 20:52:55 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/12 14:35:35 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	rb(t_node **head)
 	t_node	*current;
 
 	old_head = *head;
-	*head = (*head)->next;
+	if ((*head)->next)
+		*head = (*head)->next;
 	current = *head;
-	current->prev = NULL;
+	if (current->prev)
+		current->prev = NULL;
 	while (current->next != NULL)
 		current = current->next;
 	current->next = old_head;
