@@ -6,17 +6,16 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:07:52 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 17:41:12 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 19:05:47 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
+int	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 {
 	int	count_a;
 	int	count_b;
-	int	iter;
 	int	cheapest_steps_to_push;
 
 	count_a = count_nodes_and_update_index(head_a);
@@ -26,30 +25,9 @@ void	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 	update_median(head_b, count_b);
 	while (*head_a)
 	{
-		iter = 0;
 		(*head_a)->destination = check_destination(head_b, (*head_a)->value);
-		while (iter < (*head_a)->destination)
-		{
-			if ((*head_a)->destination == count_b)
-			{
-				head_to_tail(head_b);
-				break ;
-			}
-			*head_b = (*head_b)->next;
-			iter++;
-		}
-		if ((*head_b)->above_median == 0)
-			(*head_a)->cheapest_to_push = (*head_a)->destination + 1;
-		if ((*head_b)->above_median == 1)
-			(*head_a)->cheapest_to_push = count_b - (*head_a)->destination + 1;
-		if ((*head_a)->above_median == 0)
-		{
-			(*head_a)->cheapest_to_push += (*head_a)->index;
-		}
-		else if ((*head_a)->above_median == 1)
-		{
-			(*head_a)->cheapest_to_push += count_a - (*head_a)->index;
-		}
+		head_to_tail(head_b);
+		update_cheapest_to_push_member(head_a, head_b, count_a, count_b);
 		tail_to_head(head_b);
 		if ((*head_a)->cheapest_to_push < cheapest_steps_to_push)
 			cheapest_steps_to_push = (*head_a)->cheapest_to_push;
@@ -58,4 +36,5 @@ void	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 		else
 			break ;
 	}
+	return (cheapest_steps_to_push);
 }

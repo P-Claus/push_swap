@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 18:12:40 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 19:05:56 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ int						check_destination(t_node **head, int new_value);
 int						find_lowest_int(t_node **head_a);
 int						return_lowest_int(t_node **head_a);
 long					ft_atoi_long(const char *str);
-void					count_steps_to_be_in_position(t_node **head_a,
+int						count_steps_to_be_in_position(t_node **head_a,
 							t_node **head_b);
 void					update_median(t_node **head, int count);
 int						count_nodes_and_update_index(t_node **head);
 void					set_median(t_node **head, int iter, int count,
 							int median);
+void					update_cheapest_to_push_member(t_node **head_a,
+							t_node **head_b, int count_a, int count_b);
 
 #endif
