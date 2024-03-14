@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 20:33:10 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/12 14:27:46 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 17:11:00 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	insert_end(t_node **head, int data)
 	new_node->prev = *head;
 	new_node->next = NULL;
 	new_node->destination = 0;
+	new_node->index = 0;
 	if (new_node->prev != NULL && new_node->prev->next == NULL)
 		new_node->prev->next = new_node;
 	if (!*head)
