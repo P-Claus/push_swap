@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_median.c                                    :+:      :+:    :+:   */
+/*   set_median.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 20:17:00 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 18:14:20 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/14 18:09:56 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/14 18:12:30 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	update_median(t_node **head, int count)
+void	set_median(t_node **head, int iter, int count, int median)
 {
-	int	median;
-	int	iter;
-
-	median = count / 2;
-	iter = 0;
-	while (*head)
+	if (count % 2 == 0)
 	{
-		set_median(head, iter, count, median);
-		iter++;
-		if ((*head)->next)
-			*head = (*head)->next;
+		if (iter < median)
+			(*head)->above_median = 0;
 		else
-			break ;
+			(*head)->above_median = 1;
 	}
-	tail_to_head(head);
+	else if (count % 2 != 0)
+	{
+		if (iter <= median)
+			(*head)->above_median = 0;
+		else
+			(*head)->above_median = 1;
+	}
 }

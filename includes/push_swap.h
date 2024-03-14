@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 17:06:43 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 18:12:40 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void					count_steps_to_be_in_position(t_node **head_a,
 							t_node **head_b);
 void					update_median(t_node **head, int count);
 int						count_nodes_and_update_index(t_node **head);
+void					set_median(t_node **head, int iter, int count,
+							int median);
 
 #endif
