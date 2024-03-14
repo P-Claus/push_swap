@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 19:05:56 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 19:14:56 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void					sort_five_fifth_int(t_node **head_a, t_node **head_b,
 							int destination);
 void					sort_many(t_node **head_a, t_node **head_b);
 void					sort_many_initial_sort_b(t_node **head);
+void					sort_many_push_to_b(t_node **head_a, t_node **head_b,
+							int cheapest_steps_to_push);
 
 /*	UTILS	*/
 void					tail_to_head(t_node **tail);

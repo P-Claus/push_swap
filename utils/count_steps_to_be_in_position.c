@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:07:52 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 19:05:47 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/14 22:16:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 		tail_to_head(head_b);
 		if ((*head_a)->cheapest_to_push < cheapest_steps_to_push)
 			cheapest_steps_to_push = (*head_a)->cheapest_to_push;
+		ft_printf("The DESTINATION is: %d\n", (*head_a)->destination);
 		if ((*head_a)->next)
 			*head_a = (*head_a)->next;
 		else
 			break ;
 	}
+	tail_to_head(head_a);
 	return (cheapest_steps_to_push);
 }
