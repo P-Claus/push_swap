@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:26:24 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 17:03:53 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/15 21:33:52 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ void	pb(t_node **head_a, t_node **head_b)
 		return ;
 	if ((*head_a)->prev == NULL && (*head_a)->next == NULL)
 	{
-		(*head_b)->prev = *head_b;
+		(*head_b)->prev = *head_a;
 		(*head_a)->next = *head_b;
+		*head_b = *head_a;
 		*head_a = NULL;
 	}
 	else
@@ -34,7 +35,6 @@ void	pb(t_node **head_a, t_node **head_b)
 		if (*head_b)
 			(*head_b)->prev = top_a;
 		*head_b = top_a;
-		(*head_b)->prev = NULL;
 	}
 	ft_printf("pb\n");
 }

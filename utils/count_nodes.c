@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   return_highest_int.c                               :+:      :+:    :+:   */
+/*   count_nodes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 17:08:46 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 17:57:19 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/15 20:49:54 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/15 20:50:51 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	return_highest_int(t_node **head)
+int	count_nodes(t_node **head)
 {
-	int highest;
-	t_node *old_head;
+	int count;
 
-	highest = INT_MIN;
-	old_head = *head;
+	count = 0;
 	while (*head)
 	{
-		if ((*head)->value > highest)
-			highest = (*head)->value;
-		*head = (*head)->next;
+		count++;
+		if ((*head)->next)
+			*head = (*head)->next;
+		else
+			break ;
 	}
-	*head = old_head;
 	tail_to_head(head);
-	return (highest);
+	return (count);
 }

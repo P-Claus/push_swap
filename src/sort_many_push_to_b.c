@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:10:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/14 22:16:42 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/15 21:58:51 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,18 @@ void	sort_many_push_to_b(t_node **head_a, t_node **head_b,
 			ft_printf("The cheapest is: %d\n", (*head_a)->cheapest_to_push);
 			ft_printf("Above median is: %d\n", (*head_a)->above_median);
 			// rotate b so it can be pushed in the correct position
-			index = (*head_b)->index;
-			if ((*head_b)->above_median == 0)
+			index = (*head_a)->destination - 1;
+			if (index < (count_nodes(head_b) + 1) / 2)
 			{
-				while (iter < index)
+				while (iter <= index)
 				{
 					rb(head_b);
-					ft_printf("Iter is: %d\n", iter);
 					iter++;
 				}
 			}
-			else if (((*head_b)->above_median == 1))
+			else if (index >= (count_nodes(head_b) + 1) / 2)
 			{
-				while (iter <= index)
+				while (iter < (count_nodes(head_b) - index) - 1)
 				{
 					rrb(head_b);
 					iter++;
