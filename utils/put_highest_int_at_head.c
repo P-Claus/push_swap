@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
+/*   put_highest_int_at_head.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 15:02:56 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/17 21:43:54 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/17 20:58:48 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/17 21:05:12 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ra(t_node **head)
+void	put_highest_int_at_head(t_node **head)
 {
-	t_node	*old_head;
-	t_node	*current;
-
-	old_head = *head;
-	*head = (*head)->next;
-	current = *head;
-	if (current->prev != 0)
-		current->prev = NULL;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = old_head;
-	old_head->next = NULL;
-	old_head->prev = current;
-	ft_printf("ra\n");
+	update_median(head, count_nodes(head));
+	while ((*head))
+	{
+		ft_printf("The value is: %d\n", (*head)->value);
+		ft_printf("Above median is: %d\n", (*head)->above_median);
+		if ((*head)->next)
+			*head = (*head)->next;
+		else
+			break ;
+	}
+	tail_to_head(head);
 }

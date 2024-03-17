@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 17:07:52 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 21:38:15 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/17 21:10:25 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	count_steps_to_be_in_position(t_node **head_a, t_node **head_b)
 	update_median(head_b, count_b);
 	while (*head_a)
 	{
-		ft_printf("The head is: %d\n", (*head_a)->value);
 		(*head_a)->destination = check_destination_reverse(head_b,
 				(*head_a)->value);
 		update_cheapest_to_push_member(head_a, head_b, count_a, count_b);

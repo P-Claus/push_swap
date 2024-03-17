@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:10:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 21:58:51 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/17 21:38:09 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,15 @@ void	sort_many_push_to_b(t_node **head_a, t_node **head_b,
 			index = (*head_a)->index;
 			if ((*head_a)->above_median == 0)
 			{
-				while (iter < index)
+				while (iter <= index)
 				{
 					ra(head_a);
-					ft_printf("Iter is: %d\n", iter);
 					iter++;
 				}
 			}
 			else if ((*head_a)->above_median == 1)
 			{
-				while (iter < index)
+				while (iter <= index)
 				{
 					rra(head_a);
 					iter++;
