@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 17:17:51 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/17 21:10:39 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/18 16:29:31 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int	check_destination_reverse(t_node **head, int new_value)
 {
-	int		count;
-	t_node	*old_head;
-	int		highest_int;
+	int	count;
+	int	highest_int;
 
 	count = 0;
-	old_head = *head;
 	highest_int = return_highest_int(head);
 	while ((*head))
 	{
@@ -35,8 +33,11 @@ int	check_destination_reverse(t_node **head, int new_value)
 		if ((*head)->next)
 			*head = (*head)->next;
 		else
+		{
+			count = 0;
 			break ;
+		}
 	}
-	*head = old_head;
+	tail_to_head(head);
 	return (count);
 }

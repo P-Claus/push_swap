@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:26:24 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/08 20:52:09 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/18 22:45:11 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,14 @@ void	pa(t_node **head_a, t_node **head_b)
 
 	if (*head_b == NULL)
 		return ;
-	if ((*head_b)->prev == NULL && (*head_b)->next == NULL)
-	{
-		(*head_a)->prev = *head_b;
-		(*head_b)->next = *head_a;
-		*head_a = *head_b;
-		*head_b = NULL;
-	}
-	else
-	{
-		top_b = *head_b;
-		*head_b = (*head_b)->next;
-		if ((*head_b)->next == NULL)
-			(*head_b)->prev = NULL;
-		top_b->next = *head_a;
+	top_b = *head_b;
+	*head_b = (*head_b)->next;
+	if (*head_b)
+		(*head_b)->prev = NULL;
+	top_b->next = *head_a;
+	top_b->prev = NULL;
+	if (*head_a)
 		(*head_a)->prev = top_b;
-		*head_a = top_b;
-	}
+	*head_a = top_b;
 	ft_printf("pa\n");
 }
