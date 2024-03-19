@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:35:13 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 17:48:27 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/19 11:58:05 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	count_nodes_and_update_index(t_node **head)
 {
-	int count;
-	int index;
+	int	count;
+	int	index;
 
 	count = 0;
 	index = 0;
