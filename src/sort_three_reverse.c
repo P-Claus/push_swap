@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 17:38:41 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 17:40:59 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/19 20:54:39 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,21 @@ void	sort_three_reverse(t_node **head)
 	if ((*head)->value > (*head)->next->value
 		&& (*head)->next->next->value > (*head)->next->value
 		&& (*head)->value < (*head)->next->next->value)
-		rra(head);
+		rrb(head);
 	if ((*head)->value > (*head)->next->value
 		&& (*head)->next->value < (*head)->next->next->value
 		&& (*head)->next->next->value < (*head)->value)
-		sa(*head);
+		sb(*head);
 	if ((*head)->value < (*head)->next->value
 		&& (*head)->next->value > (*head)->next->next->value
 		&& (*head)->next->next->value > (*head)->value)
-		ra(head);
+		rb(head);
 	if ((*head)->value < (*head)->next->value
 		&& (*head)->next->value < (*head)->next->next->value
 		&& (*head)->next->next->value > (*head)->value)
-		ra(head);
+		rb(head);
 	if ((*head)->value < (*head)->next->value
 		&& (*head)->next->value > (*head)->next->next->value
 		&& (*head)->next->next->value < (*head)->value)
-		sa(*head);
+		sb(*head);
 }
