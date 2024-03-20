@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 20:58:48 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/19 21:36:11 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/20 21:02:35 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ void	put_highest_int_at_head(t_node **head)
 	if (above_median == 0)
 	{
 		while ((*head)->value != highest_int)
-		{
 			rb(head);
-		}
 	}
 	if (above_median == 1)
 	{

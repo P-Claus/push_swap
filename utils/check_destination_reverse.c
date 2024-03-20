@@ -6,18 +6,16 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 17:17:51 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/19 13:54:36 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/20 21:05:12 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_destination_reverse(t_node **head, int new_value)
+int	check_destination_reverse(t_node **head, int new_value, int count)
 {
-	int	count;
 	int	highest_int;
 
-	count = 0;
 	highest_int = return_highest_int(head);
 	while ((*head))
 	{

@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/17 21:02:28 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/20 21:04:18 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void					tail_to_head(t_node **tail);
 void					head_to_tail(t_node **head);
 int						is_valid_int(char *str);
 int						check_destination(t_node **head, int new_value);
-int						check_destination_reverse(t_node **head, int new_value);
+int						check_destination_reverse(t_node **head, int new_value,
+							int count);
 int						find_lowest_int(t_node **head_a);
 int						return_lowest_int(t_node **head_a);
 int						return_highest_int(t_node **head);
