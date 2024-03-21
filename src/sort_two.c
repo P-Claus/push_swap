@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_two.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 18:13:39 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/21 17:54:21 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/21 18:12:32 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_two(t_node **head)
 {
-	t_node	*a;
-	t_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (1);
-	if (check_for_errors(argv))
-		return (1);
+	if ((*head)->value > (*head)->next->value)
+		ra(head);
 	else
-		insert_multiple_end(argv, &a);
-	if (argc == 2)
-		return (0);
-	if (argc == 3)
-		sort_two(&a);
-	if (argc == 4)
-		sort_three(&a);
-	if (argc == 6)
-		sort_five(&a, &b);
-	else if (argc > 100)
-		sort_many(&a, &b);
-	remove_all_nodes(&a);
-	remove_all_nodes(&b);
+		return ;
 }

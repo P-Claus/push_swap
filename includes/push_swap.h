@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 16:35:59 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 17:57:28 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ typedef struct s_stack_node
 
 typedef struct s_function_params
 {
-	int iter_a;
-	int	iter_b;
-	int	index_a;
-	int	index_b;
-}				t_fp;
-
+	int					iter_a;
+	int					iter_b;
+	int					index_a;
+	int					index_b;
+}						t_fp;
 
 int						main(int argc, char **argv);
 void					insert_beginning(t_node **head, int data);
@@ -68,6 +67,7 @@ void					rrb(t_node **head);
 void					rrr(t_node **head_a, t_node **head_b);
 
 /*	ALGORITHM FUNCTIONS	*/
+void					sort_two(t_node **head);
 void					sort_three(t_node **head);
 void					sort_three_reverse(t_node **head);
 void					sort_five(t_node **head_a, t_node **head_b);
@@ -102,6 +102,7 @@ void					set_median(t_node **head, int iter, int count,
 void					update_cheapest_to_push_member(t_node **head_a,
 							t_node **head_b, int count_a, int count_b);
 void					put_highest_int_at_head(t_node **head);
-void    rotate_b_to_be_in_position(t_node **head_a, t_node **head_b, int *index_b, int *iter_b);
+void					rotate_b_to_be_in_position(t_node **head_a,
+							t_node **head_b, int *index_b, int *iter_b);
 
 #endif
