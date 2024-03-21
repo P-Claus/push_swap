@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:10:01 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 11:27:24 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 13:08:02 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,8 @@ void	sort_many_push_to_b(t_node **head_a, t_node **head_b,
 				}
 			}
 			// rotate b so it's in position to receive from a
-			if (index_b < (count_nodes(head_b) + 1) / 2)
-			{
-				while (iter_b <= index_b)
-				{
-					rb(head_b);
-					iter_b++;
-				}
-			}
-			else if (index_b >= (count_nodes(head_b) + 1) / 2)
-			{
-				while (iter_b < (count_nodes(head_b) - index_b) - 1)
-				{
-					rrb(head_b);
-					iter_b++;
-				}
-			}
-			pb(head_a, head_b);
-			return ;
+		rotate_b_to_be_in_position(head_a, head_b, &index_b, &iter_b);	
+		return;
 		}
 		if ((*head_a)->next)
 			*head_a = (*head_a)->next;

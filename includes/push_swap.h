@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/20 21:04:18 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 12:51:16 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void					set_median(t_node **head, int iter, int count,
 void					update_cheapest_to_push_member(t_node **head_a,
 							t_node **head_b, int count_a, int count_b);
 void					put_highest_int_at_head(t_node **head);
+void    rotate_b_to_be_in_position(t_node **head_a, t_node **head_b, int *index_b, int *iter_b);
 
 #endif
