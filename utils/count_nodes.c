@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 20:49:54 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/15 20:50:51 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 11:07:08 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	count_nodes(t_node **head)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*head)
