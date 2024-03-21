@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 12:51:16 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 14:32:55 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }						t_node;
+
+typedef struct	s_function_params
+{
+	int	*iter_a;
+	int	*iter_b;
+	int	*index_a;
+	int	*index_b;
+}				t_function_params;
 
 int						main(int argc, char **argv);
 void					insert_beginning(t_node **head, int data);
@@ -94,5 +102,10 @@ void					update_cheapest_to_push_member(t_node **head_a,
 							t_node **head_b, int count_a, int count_b);
 void					put_highest_int_at_head(t_node **head);
 void    rotate_b_to_be_in_position(t_node **head_a, t_node **head_b, int *index_b, int *iter_b);
+void    rr_and_increase_iter(t_node **head_a, t_node **head_b, int *iter_a, int*iter_b);
+void    ra_and_increase_iter(t_node **head_a, int *iter_a);
+void   rrr_and_increase_iter(t_node **head_a, t_node **head_b, int *iter_a, int *iter_b);
+void    rra_and_increase_iter(t_node **head_a, int *iter_a);
+void    rotate_a_below_median_to_send_nodes(t_function_params fa, t_node **head_a, t_node **head_b);
 
 #endif
