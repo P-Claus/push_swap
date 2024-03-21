@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 17:57:28 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 20:04:02 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int						check_for_errors(char **argv);
 int						error_check_integer(char **argv);
 int						error_check_duplicates(char **argv);
 int						error_check_for_int(char **argv);
+int						error_check_empty_string(char **argv);
 
 /*	ACTIONS	*/
 void					sa(t_node *head_a);

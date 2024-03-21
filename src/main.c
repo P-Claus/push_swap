@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 18:13:39 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 19:55:36 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	main(int argc, char **argv)
 		sort_two(&a);
 	if (argc == 4)
 		sort_three(&a);
-	if (argc == 6)
+	if (argc == 5 || argc == 6)
 		sort_five(&a, &b);
-	else if (argc > 100)
+	else if (argc > 6)
 		sort_many(&a, &b);
 	remove_all_nodes(&a);
 	remove_all_nodes(&b);

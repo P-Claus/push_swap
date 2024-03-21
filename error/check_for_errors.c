@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:16:55 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/20 22:37:22 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/21 20:09:04 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ int	check_for_errors(char **argv)
 		return (1);
 	}
 	if (error_check_for_int(argv) == 1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
+	if (error_check_empty_string(argv) == 1)
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (1);
@@ -82,4 +87,12 @@ int	error_check_for_int(char **argv)
 		count++;
 	}
 	return (0);
+}
+
+int	error_check_empty_string(char **argv)
+{
+	if (argv[1][0] == 0)
+		return (1);
+	else
+		return (0);
 }
