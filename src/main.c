@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/21 22:10:29 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/22 09:33:35 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 		return (1);
 	else
 		insert_multiple_end(argv, &a);
-	// if (check_if_list_is_sorted(&a) == 0)
-	// return (0);
 	if (argc == 2)
 	{
 		remove_all_nodes(&a);

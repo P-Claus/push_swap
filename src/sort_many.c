@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 16:52:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/18 22:45:33 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/22 09:34:02 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ void	sort_many(t_node **head_a, t_node **head_b)
 {
 	int	steps;
 
+	if (check_if_list_is_sorted(head_a) == 0)
+		return ;
+	tail_to_head(head_a);
 	pb(head_a, head_b);
 	pb(head_a, head_b);
 	pb(head_a, head_b);
