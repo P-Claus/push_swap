@@ -35,6 +35,10 @@ UTILS_OBJ		= $(addprefix $(OBJ_DIR)/, $(notdir $(UTILS_FILES:.c=.o)))
 
 INCLUDES		= -I ./includes
 
+TOTAL_FILES := $(words $(wildcard $(SOURCES_DIR)/*.c) $(wildcard $(ERROR_DIR)/*.c) $(wildcard $(ACTIONS_DIR)/*.c) $(wildcard $(UTILS_DIR)/*.c))
+
+COMPILE_COUNT = 0
+
 #########################################
 ###					COLORS		      ###
 #########################################
@@ -65,19 +69,23 @@ $(NAME): $(LIBFT) $(OBJ) $(UTILS_OBJ) $(ERROR_OBJ) $(ACTIONS_OBJ)
 $(OBJ_DIR)/%.o: $(SOURCES_DIR)/%.c
 	@$(MKDIR) $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+	@$(eval COMPILE_COUNT=$(shell echo $$(($(COMPILE_COUNT)+1))))
+	@echo -n "$(RESET)$(YELLOW)Compiling push_swap $$(($(COMPILE_COUNT)*100/$(TOTAL_FILES)))%"
 
 $(OBJ_DIR)/%.o: $(UTILS_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+	@$(eval COMPILE_COUNT=$(shell echo $$(($(COMPILE_COUNT)+1))))
+	@echo -n "$(RESET)$(YELLOW)Compiling push_swap $$(($(COMPILE_COUNT)*100/$(TOTAL_FILES)))%"
 
 $(OBJ_DIR)/%.o: $(ERROR_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+	@$(eval COMPILE_COUNT=$(shell echo $$(($(COMPILE_COUNT)+1))))
+	@echo -n "$(RESET)$(YELLOW)Compiling push_swap $$(($(COMPILE_COUNT)*100/$(TOTAL_FILES)))%"
 
 $(OBJ_DIR)/%.o: $(ACTIONS_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo -n "$(RESET)$(YELLOW)Compiled $<"
+	@$(eval COMPILE_COUNT=$(shell echo $$(($(COMPILE_COUNT)+1))))
+	@echo -n "$(RESET)$(YELLOW)Compiling push_swap $$(($(COMPILE_COUNT)*100/$(TOTAL_FILES)))%"
 
 clean:
 	@make clean -s -C $(LIBFT_DIR)
