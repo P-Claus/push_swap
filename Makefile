@@ -49,7 +49,7 @@ YELLOW			= \033[0;33m
 BLUE			= \033[0;34m
 MAGENTA			= \033[0;35m
 CYAN			= \033[0;36m
-RESET_COLOR	= \033[0m
+RESET_COLOR		= \033[0m
 MOVEUP			= \033[F
 RESET			= \e[2K\r
 
