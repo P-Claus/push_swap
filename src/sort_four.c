@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 10:43:31 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/26 13:29:12 by pclaus           ###   ########.fr       */
+/*   Created: 2024/03/26 13:23:26 by pclaus            #+#    #+#             */
+/*   Updated: 2024/03/26 13:28:37 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void sort_four(t_node **head_a, t_node **head_b)
 {
-	t_node	*a;
-	t_node	*b;
+    int destination;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || check_for_errors(argv))
-		return (1);
-	else
-		insert_multiple_end(argv, &a);
-	if (argc == 2)
-	{
-		remove_all_nodes(&a);
-		return (0);
-	}
-	if (argc == 3)
-		sort_two(&a);
-	if (argc == 4)
-		sort_three(&a);
-	if (argc == 5)
-		sort_four(&a, &b);
-	if (argc == 6)
-		sort_five(&a, &b);
-	else if (argc > 6)
-		sort_many(&a, &b);
-	remove_all_nodes(&a);
+    if (check_if_list_is_sorted(head_a) == 0)
+        return;
+    tail_to_head(head_a);
+    pb(head_a, head_b);
+    sort_three(head_a);
+    destination = check_destination(head_a, (*head_b)->value);
+    sort_five_fourth_int(head_a, head_b, destination);
+    sort_five_final_sort(head_a);
 }

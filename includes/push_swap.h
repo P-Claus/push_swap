@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 18:22:57 by pclaus            #+#    #+#             */
-/*   Updated: 2024/03/26 10:40:05 by pclaus           ###   ########.fr       */
+/*   Updated: 2024/03/26 13:29:34 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void					rrr(t_node **head_a, t_node **head_b);
 void					sort_two(t_node **head);
 void					sort_three(t_node **head);
 void					sort_three_reverse(t_node **head);
+void					sort_four(t_node **head_a, t_node **head_b);
 void					sort_five(t_node **head_a, t_node **head_b);
 void					sort_five_final_sort(t_node **head);
 void					sort_five_fourth_int(t_node **head_a, t_node **head_b,
